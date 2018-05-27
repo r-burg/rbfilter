@@ -1,0 +1,31 @@
+Copyright (c) 2018 Roger Burghall
+
+This is a git repository for 'rbfilter'. Copyright is owned by Roger Burghall.
+
+This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
+The contents of this repository are subject to the GPLv3.0 ("General Public Licence")
+
+*** No responsibility is taken for the results obtained using the program contained in or created using these files. ***
+
+It is strongly recommended that the user should verify and validate the results obtained. Component tolerances and the limitations of real amplifiers will affect the results with actual circuits, and finite time intervals used in circuit simulation software will affect results indicated by circuit simulation software such as SPICE. Similar limitations exist when creating discrete filters. 
+
+'rbfilter' is intended to design, predict and simulate the operation of active and digital filters. As of version 1.0 it can deal with low-, band- and high-pass filters, designed as "Sallen and Key", "Rauch" and Discrete forms of Bessel, Butterworth and Chebyshev types. It does not, in general, comment on the sanity or otherwise of trying to create a particular filter, even if it involves unrealistic "q" values or operates at ridiculous frequencies.
+
+The original version of this program was written in the early 1970s, using a Digital Equipment Corporation PDP12 computer, in Fortran. The next version dates from the 1980s and was written in BASIC and run on a BBC Model B computer. This version, written in C++, was recreated using a PC running Ubuntu; while it has enhanced functionality in some areas it lacks, as yet, some of the functions of the BBC version, such as the ability to simulate the output of a filter, given a file containing a representation of the input signal.
+
+Use 'Build' to compile and link the program, 'Run' to run it, 'Debug' to run it under the gdb debugger. (I have not used a makefile as the program isn't big or complicated enough to warrant the effort - yet.)
+
+

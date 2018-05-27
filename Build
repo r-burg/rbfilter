@@ -1,0 +1,6 @@
+#! /bin/bash
+# I'm still using Gtk2!
+g++ -g `pkg-config --cflags gtk+-2.0 gdk-2.0 libgnome-2.0 libgnomeui-2.0 gdk-pixbuf-xlib-2.0` -o rbfilter ./rbfilter.cpp ./Calcs.cpp ./Rauch.cpp ./Sallen_and_Key.cpp ./Discrete.cpp `pkg-config --libs gtk+-2.0 gdk-2.0 libgnome-2.0 libgnomeui-2.0 gdk-pixbuf-xlib-2.0`
+echo "Done!"
+read
+
