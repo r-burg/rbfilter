@@ -1,3 +1,12 @@
+/******************************************************************************
+
+                                Rauch.cpp
+
+                Copyright (c) Roger Burghall 2014..2017
+
+******************************************************************************/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -9,7 +18,7 @@
 #endif
 
 /*! \file Rauch.cpp
-	This program calculates the T and q values for a Rauch stage from the component values.
+	This program calculates the T and q values for a Rauch stage from the component values and vice-versa.
 */
 
 using namespace std;
@@ -156,6 +165,10 @@ void stage::synthesise_R_band(void)
 	double a, b, c;
 	double C;
 	double R;
+
+    cout << "There may be a problem in this function. Try another method of realization.\n";
+    return;
+
 #if SHOW_CALC
 	cout << "\nsynthesise_band\n";
 #endif

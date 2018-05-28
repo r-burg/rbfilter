@@ -1,5 +1,7 @@
 /*! \mainpage FilterCalcs
-(c) 1971 .. 2016 Roger Burghall
+
+Copyright (c) 1971 .. 2016 Roger Burghall
+
 The original of this code was written in Fortran for the Digital
 Equipment Corporation PDP-12, beginning in the early 1970s, and then
 ported to the BBC Model B, and extended to provide more of the 

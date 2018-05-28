@@ -4,8 +4,6 @@ libgnomeui-2.0
 gdk-pixbuf-xlib-2.0
 gtk+-2.0
 gdk-2.0
-libgnome-2.0
-libgnomeui-2.0
-gdk-pixbuf-xlib-2.0
+
 
 

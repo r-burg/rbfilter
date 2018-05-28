@@ -1,3 +1,12 @@
+/******************************************************************************
+
+                                Discrete.cpp
+
+                Copyright (c) Roger Burghall 2014..2017
+
+******************************************************************************/
+
+
 /** \file
 'Discrete.cpp' holds the code for implementing discrete, i.e. z-transform, filters.
 */

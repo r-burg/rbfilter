@@ -1,3 +1,12 @@
+/******************************************************************************
+
+                                Calcs.cpp
+
+                Copyright (c) Roger Burghall 2014..2017
+
+******************************************************************************/
+
+
 /** \file
 'Calcs.cpp' is one of the files intended to hold the functions for 
 calculation purposes.
