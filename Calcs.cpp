@@ -66,7 +66,7 @@ double isinh(double x)
 
 double n_to_freq(int n, double f1, int nmax=FSTEPS, int decades=2)
 {
-	return(f1 * pow10(double(n) * decades / nmax));
+	return(f1 * exp10(double(n) * decades / nmax));
 }
 
 
@@ -140,6 +140,7 @@ stage& stage::operator= (stage& f1)
 	this->q = f1.q;
 	this->pole = f1.pole;
 	this->zero = f1.zero;
+	return(*this);
 }
 
 
@@ -391,15 +392,15 @@ void
 TFilter::chebyshev(void)
 {
 char dump;
-
 int i;
-
 double aa[20], ww[20], g, a, w, tt, qq;
 
 	// Chebyshev filter design.
 	log("<Chebyshev>");
 	unsigned n = poles;
-	g = ripple;
+// Version 2.11: correct ripple factor from dB.
+//	g = ripple;
+	g = sqrt(pow(10.0, ripple / 10.0) - 1.0);
 
 	for(i=1; i<=n; i++) {
 		a=-sin((2*i-1)*M_PI/(2*n))*sinh(isinh(1.0/g)/n);
@@ -498,7 +499,7 @@ bode_calc(TFilter& filter)
 	j = std::complex<double>(0.0, 1.0);
 	
 //	filter.fmax = 1.0 * filter.frequency * M_PI / 2.0;
-	filter.fmax = 0.1 * filter.frequency;
+	filter.fmax = T_MULTIPLE_HP * filter.frequency;
 	for(i=0; i<FSTEPS; i++) filter.freq_resp[i] = 1.0;
 	for(k=0; k<(filter.poles/2); k++) {
 //		t = 1.0 / abs(filter.pole[k]);
@@ -584,9 +585,9 @@ TFilter::step_calc(void)
 	j = std::complex<double>(0.0, 1.0);
 
 	switch(fclass) {
-		case Lowpass: tmax = 5.0/frequency; break;
-		case Bandpass: tmax = 5.0/bandwidth; break;
-		case Highpass: tmax = 2.0/frequency; break;
+		case Lowpass: tmax = T_MULTIPLE_LP/frequency; break;
+		case Bandpass: tmax = T_MULTIPLE_BP/bandwidth; break;
+		case Highpass: tmax = T_MULTIPLE_HP/frequency; break;
 		default: cout << "Unknown fclass\n"; exit(-1);
 	}
 	dt = tmax/TSTEPS;
@@ -1038,7 +1039,7 @@ double q1, q2;		// Used for checking.
 	// Check:
 	q1 = (a1*a1+b1*b1)/(2.0*a1);
 	q2 = (a2*a2+b2*b2)/(2.0*a2);
-	cout << "q=" << q1 << " & " << q2 << "\n";
+//	cout << "q=" << q1 << " & " << q2 << "\n";	TODO: WHAT has gone wrong here?!!!
 
 	filter.log("</geffe>");
 }

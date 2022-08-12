@@ -54,7 +54,7 @@ double Fn_e6(double c)
 	int i = 0;
 	double temp;
 	float e6[] = { 10.0, 6.8, 4.7, 3.3, 2.2, 1.5, 1.0, 0.68 };
-	double exponent = pow10(int(log10(c)));
+	double exponent = exp10(int(log10(c)));
 	double mantissa = c / exponent;
 	cout << "mantissa = " << mantissa << " exponent = " << exponent << "\n";
 	do {
@@ -73,7 +73,7 @@ double Fn_e12(double c)
 	int i = 0;
 	double temp;
 	float e12[] = { 10.0, 8.2, 6.8, 5.6, 4.7, 3.9, 3.3, 2.7, 2.2, 1.8, 1.5, 1.2, 1.0, 0.82 };
-	double exponent = pow10(int(log10(c)));
+	double exponent = exp10(int(log10(c)));
 	double mantissa = c / exponent;
 	do {
 		temp = sqrt(e12[i] * e12[i+1]) / 10.0;

@@ -46,7 +46,7 @@ double nearest(double v, ee e1)
     double l = log10(v);
     double p = int(l);			// Power of ten: i.e. exponent
     double f = l - p;
-    double x = pow10(f+1.0);	// Mantissa
+    double x = exp10(f+1.0);	// Mantissa
 	double *ep;
 	switch(e1) {
 		case _e6: ep = e6; n = 6; break;
@@ -62,7 +62,7 @@ double nearest(double v, ee e1)
         cout << "Value below 1.0\n";
         return(1.0);
     }
-    return((x/ep[i-1] < ep[i]/x)? ep[i-1] * pow10(p-1.0): ep[i] * pow10(p-1.0));
+    return((x/ep[i-1] < ep[i]/x)? ep[i-1] * exp10(p-1.0): ep[i] * exp10(p-1.0));
 }
 
 
@@ -166,8 +166,10 @@ void stage::synthesise_R_band(void)
 	double C;
 	double R;
 
-    cout << "There may be a problem in this function. Try another method of realization.\n";
+#if 0
+    cout << "There may be a problem in this function. Calculation aborted: try another method of realization.\n";
     return;
+#endif
 
 #if SHOW_CALC
 	cout << "\nsynthesise_band\n";
@@ -178,6 +180,7 @@ void stage::synthesise_R_band(void)
 		// Let C1 = C.r, C2 = C/r
 		// If R1 = R2 then q = T/(R1*(C.r+C/r))
 		// C.r^2 - T/(q * R1).r + C = 0
+		R1 *= 0.75;
 		R2 *= 1.5;			/// Try progressively increasing ratios of R2:R1 until a solution is possible.
 		C = T / sqrt(R1*R2);
 		R = sqrt(R1*R2);

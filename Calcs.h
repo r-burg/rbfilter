@@ -28,6 +28,13 @@ using std::string;
 #define IMAX 19
 #define MAXS 19
 
+#define T_MULTIPLE_LP	5.0
+#define T_MULTIPLE_BP	5.0
+#define T_MULTIPLE_HP	2.0
+#define F_MULTIPLE	0.1
+
+#define LINEAR_FREQ	true
+
 #define LOG true
 
 #define NORMALISE

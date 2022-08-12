@@ -1,0 +1,5 @@
+#! /bin/bash
+rm *~
+echo "Done!"
+sleep 2
+

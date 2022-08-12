@@ -1,0 +1,5 @@
+#! /bin/bash
+echo "Count lines:"
+wc -l *.cpp *.h
+read
+

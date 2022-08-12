@@ -1,8 +1,10 @@
 # Initial makefile for use of autotools.
 CC=g++
-FLAGS=`pkg-config --cflags gtk+-2.0 gdk-2.0 libgnome-2.0 libgnomeui-2.0 gdk-pixbuf-xlib-2.0`
+# FLAGS=`pkg-config --cflags gtk+-2.0 gdk-2.0 libgnome-2.0 libgnomeui-2.0 gdk-pixbuf-xlib-2.0`
+FLAGS=`pkg-config --cflags gtk+-3.0 gdk-3.0`
 HEAD= 
-LIBS=`pkg-config --libs gtk+-2.0 gdk-2.0 libgnome-2.0 libgnomeui-2.0 gdk-pixbuf-xlib-2.0`
+# LIBS=`pkg-config --libs gtk+-2.0 gdk-2.0 libgnome-2.0 libgnomeui-2.0 gdk-pixbuf-xlib-2.0`
+LIBS=`pkg-config --libs gtk+-3.0 gdk-3.0 gdk-pixbuf-xlib-2.0`
 
 bin_PROGRAMS=rbfilter
 rbfilter_SOURCES=./rbfilter.cpp ./Calcs.cpp ./Rauch.cpp ./Sallen_and_Key.cpp ./Discrete.cpp Calcs.h Drawing.h filter.h preferred.h Discrete.h Enums.h gnome.h rbfilter.h
