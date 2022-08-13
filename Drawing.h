@@ -15,6 +15,8 @@
 
 #define SHOW_XY false
 
+#define VERBOSE	false
+
 enum DrawMode { Splane, Step, Bode, Realisation } ;
 
 #endif
